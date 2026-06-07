@@ -59,9 +59,7 @@ function Services() {
           <p className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-6">
             Capabilities
           </p>
-          <h1 className="text-5xl md:text-7xl font-display font-bold leading-[1.05]">
-            Services
-          </h1>
+          <h1 className="text-5xl md:text-7xl font-display font-bold leading-[1.05]">Services</h1>
         </div>
       </section>
 

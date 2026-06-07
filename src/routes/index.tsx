@@ -30,10 +30,30 @@ export const Route = createFileRoute("/")({
 });
 
 const categories = [
-  { img: "/Hotels and Inns/img-002.png", title: "Hotels & Inns", sub: "Multi-unit electrical systems", n: "02" },
-  { img: "/Hangers/Ellington Airfield Hanger/ellington_air_field_hanger_pic1.jpg", title: "Aviation Hangars", sub: "High-capacity solutions", n: "03" },
-  { img: "/Construction/img-006.png", title: "Construction", sub: "Diverse commercial projects", n: "04" },
-  { img: "/Churches/Dominion Church/Dominion_Church_Houston_TX_Pic1.jpg", title: "Worship Spaces", sub: "Architectural & AV power", n: "01" },
+  {
+    img: "/Hotels and Inns/img-002.png",
+    title: "Hotels & Inns",
+    sub: "Multi-unit electrical systems",
+    n: "02",
+  },
+  {
+    img: "/Hangers/Ellington Airfield Hanger/ellington_air_field_hanger_pic1.jpg",
+    title: "Aviation Hangars",
+    sub: "High-capacity solutions",
+    n: "03",
+  },
+  {
+    img: "/Construction/img-006.png",
+    title: "Construction",
+    sub: "Diverse commercial projects",
+    n: "04",
+  },
+  {
+    img: "/Churches/Dominion Church/Dominion_Church_Houston_TX_Pic1.jpg",
+    title: "Worship Spaces",
+    sub: "Architectural & AV power",
+    n: "01",
+  },
 ];
 
 function Index() {
@@ -59,25 +79,29 @@ function Index() {
         {/* Light, subtle overlays for text contrast */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/25 via-primary/10 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-primary/10" />
-        <div className="absolute inset-0 opacity-[0.08] mix-blend-overlay" style={{
-          backgroundImage:
-            "linear-gradient(transparent 95%, color-mix(in oklab, var(--brand-accent) 30%, transparent) 100%)",
-          backgroundSize: "100% 4px",
-        }} />
+        <div
+          className="absolute inset-0 opacity-[0.08] mix-blend-overlay"
+          style={{
+            backgroundImage:
+              "linear-gradient(transparent 95%, color-mix(in oklab, var(--brand-accent) 30%, transparent) 100%)",
+            backgroundSize: "100% 4px",
+          }}
+        />
 
         {/* Floating accent */}
-        <div className="absolute top-1/3 right-10 w-[5px] h-[5px] rounded-full bg-brand-accent/80 animate-spark hidden md:block" style={{ animationDuration: "5.2s" }} />
-        <div className="absolute bottom-1/3 right-1/4 w-1 h-1 rounded-full bg-brand-accent/60 animate-spark hidden md:block" style={{ animationDelay: "2.4s", animationDuration: "4.6s" }} />
+        <div
+          className="absolute top-1/3 right-10 w-[5px] h-[5px] rounded-full bg-brand-accent/80 animate-spark hidden md:block"
+          style={{ animationDuration: "5.2s" }}
+        />
+        <div
+          className="absolute bottom-1/3 right-1/4 w-1 h-1 rounded-full bg-brand-accent/60 animate-spark hidden md:block"
+          style={{ animationDelay: "2.4s", animationDuration: "4.6s" }}
+        />
 
         <div className="relative max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
           <div className="max-w-3xl">
             <div className="mb-10 inline-flex">
-            <Logo
-              variant="dark"
-              imgClassName="h-24 md:h-32 w-auto"
-              glow={false}
-              spark={false}
-            />
+              <Logo variant="dark" imgClassName="h-24 md:h-32 w-auto" glow={false} spark={false} />
             </div>
             <div className="inline-flex items-center gap-3 mb-8">
               <span className="w-10 h-px bg-brand-accent" />
@@ -124,11 +148,14 @@ function Index() {
       {/* Values */}
       <section className="relative py-24 bg-brand-accent overflow-hidden">
         {/* Subtle blueprint grid for industrial texture */}
-        <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{
-          backgroundImage:
-            "linear-gradient(var(--brand-primary) 1px, transparent 1px), linear-gradient(90deg, var(--brand-primary) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-        }} />
+        <div
+          className="absolute inset-0 opacity-[0.08] pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(var(--brand-primary) 1px, transparent 1px), linear-gradient(90deg, var(--brand-primary) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+          }}
+        />
         {/* Warm radial glow for depth */}
         <div className="absolute -top-40 left-1/4 w-[700px] h-[700px] rounded-full bg-white/10 blur-3xl pointer-events-none" />
         <div className="absolute -bottom-40 right-1/4 w-[500px] h-[500px] rounded-full bg-primary/10 blur-3xl pointer-events-none" />
@@ -144,7 +171,9 @@ function Index() {
                 key={v.word}
                 className={`group flex items-start gap-5 ${i < 2 ? "md:border-r md:border-primary/20 md:pr-10" : ""}`}
               >
-                <span className="font-display text-sm font-bold text-primary/40 mt-3 transition-colors group-hover:text-primary">{v.n}</span>
+                <span className="font-display text-sm font-bold text-primary/40 mt-3 transition-colors group-hover:text-primary">
+                  {v.n}
+                </span>
                 <div>
                   <span className="block text-5xl md:text-6xl font-display font-bold text-primary leading-none tracking-tight">
                     {v.word}
@@ -197,8 +226,9 @@ function Index() {
                   src={c.img}
                   alt={c.title}
                   loading="lazy"
-                                                  width={1549}
-                                                  height={871}                  className="w-full h-full object-cover transition-all duration-[1400ms] ease-out group-hover:scale-110 group-hover:brightness-110"
+                  width={1549}
+                  height={871}
+                  className="w-full h-full object-cover transition-all duration-[1400ms] ease-out group-hover:scale-110 group-hover:brightness-110"
                 />
                 {/* Lighter, cinematic gradient — image stays visible */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-85" />
@@ -216,7 +246,9 @@ function Index() {
                   <h3 className="text-primary-foreground font-display text-xl font-bold uppercase tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
                     {c.title}
                   </h3>
-                  <p className="text-primary-foreground/75 text-xs mt-1.5 drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)]">{c.sub}</p>
+                  <p className="text-primary-foreground/75 text-xs mt-1.5 drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)]">
+                    {c.sub}
+                  </p>
                   <div className="mt-4 flex items-center gap-2 text-brand-accent text-[11px] font-bold uppercase tracking-[0.25em] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
                     Explore <span>→</span>
                   </div>
@@ -235,13 +267,19 @@ function Index() {
         <div className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full bg-brand-accent/8 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/5 blur-3xl pointer-events-none" />
         {/* Subtle blueprint grid */}
-        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{
-          backgroundImage:
-            "linear-gradient(var(--brand-primary) 1px, transparent 1px), linear-gradient(90deg, var(--brand-primary) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
-        }} />
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(var(--brand-primary) 1px, transparent 1px), linear-gradient(90deg, var(--brand-primary) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+        />
 
-        <div ref={aboutRef} className="reveal relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <div
+          ref={aboutRef}
+          className="reveal relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center"
+        >
           <div>
             <div className="inline-flex items-center gap-3 mb-5">
               <span className="w-10 h-px bg-brand-accent" />
@@ -250,7 +288,8 @@ function Index() {
               </p>
             </div>
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 leading-[1.05]">
-              Three decades powering Houston's <span className="text-brand-accent">most ambitious</span> builds.
+              Three decades powering Houston's{" "}
+              <span className="text-brand-accent">most ambitious</span> builds.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
               Progressive Electrical Contractors, Inc. is a licensed Texas commercial electrical
@@ -266,10 +305,18 @@ function Index() {
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-px bg-primary/10 border border-primary/10">
-            <div className="bg-secondary p-8"><Counter to={30} suffix="+" label="Years In Business" /></div>
-            <div className="bg-secondary p-8"><Counter to={500} suffix="+" label="Projects Delivered" /></div>
-            <div className="bg-secondary p-8"><Counter to={24} suffix="/7" label="Service Response" /></div>
-            <div className="bg-secondary p-8"><Counter to={100} suffix="%" label="Licensed & Insured" /></div>
+            <div className="bg-secondary p-8">
+              <Counter to={30} suffix="+" label="Years In Business" />
+            </div>
+            <div className="bg-secondary p-8">
+              <Counter to={500} suffix="+" label="Projects Delivered" />
+            </div>
+            <div className="bg-secondary p-8">
+              <Counter to={24} suffix="/7" label="Service Response" />
+            </div>
+            <div className="bg-secondary p-8">
+              <Counter to={100} suffix="%" label="Licensed & Insured" />
+            </div>
           </div>
         </div>
       </section>

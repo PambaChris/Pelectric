@@ -23,7 +23,9 @@ export function SiteNav() {
 
   React.useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   return (
@@ -41,7 +43,11 @@ export function SiteNav() {
             scrolled ? "h-20" : "h-24"
           }`}
         >
-          <Link to="/" className="flex items-center -ml-1" aria-label="Progressive Electrical Contractors">
+          <Link
+            to="/"
+            className="flex items-center -ml-1"
+            aria-label="Progressive Electrical Contractors"
+          >
             <Logo
               variant="dark"
               imgClassName={`${scrolled ? "h-14" : "h-16"} w-auto transition-all duration-500`}
@@ -91,7 +97,13 @@ export function SiteNav() {
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-brand-accent/15 blur-3xl pointer-events-none" />
         <div className="relative h-full flex flex-col px-6 py-6">
           <div className="flex items-center justify-between">
-            <Logo variant="dark" imgClassName="h-14 w-auto" glow={false} spark={false} shine={false} />
+            <Logo
+              variant="dark"
+              imgClassName="h-14 w-auto"
+              glow={false}
+              spark={false}
+              shine={false}
+            />
             <button
               onClick={() => setOpen(false)}
               className="p-2 text-primary-foreground hover:text-brand-accent"

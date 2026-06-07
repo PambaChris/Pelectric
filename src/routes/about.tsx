@@ -30,9 +30,9 @@ function About() {
             Built on craft. Driven by commitment.
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-            Progressive Electrical Contractors, Inc. has served Houston and Southeast Texas for
-            more than three decades — wiring the schools, churches, hotels and hangars that shape
-            the region's skyline.
+            Progressive Electrical Contractors, Inc. has served Houston and Southeast Texas for more
+            than three decades — wiring the schools, churches, hotels and hangars that shape the
+            region's skyline.
           </p>
         </div>
       </section>

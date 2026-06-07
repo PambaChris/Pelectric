@@ -145,7 +145,8 @@
     border-color: var(--color-border);
   }
 
-  html, body {
+  html,
+  body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
@@ -180,7 +181,9 @@
   .reveal {
     opacity: 0;
     transform: translateY(28px);
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transition:
+      opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
   }
   .reveal.is-visible {
@@ -192,80 +195,143 @@
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
   .btn-premium::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(120deg, transparent 0%, color-mix(in oklab, var(--brand-accent) 60%, transparent) 50%, transparent 100%);
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      color-mix(in oklab, var(--brand-accent) 60%, transparent) 50%,
+      transparent 100%
+    );
     transform: translateX(-110%);
     transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: -1;
   }
-  .btn-premium:hover::before { transform: translateX(110%); }
-  .btn-premium:hover { transform: translateY(-2px); box-shadow: 0 14px 40px -12px color-mix(in oklab, var(--brand-accent) 50%, transparent); }
+  .btn-premium:hover::before {
+    transform: translateX(110%);
+  }
+  .btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 40px -12px color-mix(in oklab, var(--brand-accent) 50%, transparent);
+  }
 
   .electric-line {
     background: linear-gradient(90deg, transparent, var(--brand-accent), transparent);
     height: 1px;
   }
   .electric-glow {
-    box-shadow: 0 0 0 1px color-mix(in oklab, var(--brand-accent) 25%, transparent),
-                0 0 40px -8px color-mix(in oklab, var(--brand-accent) 60%, transparent);
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--brand-accent) 25%, transparent),
+      0 0 40px -8px color-mix(in oklab, var(--brand-accent) 60%, transparent);
   }
 
-  .hover-lift { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease; }
-  .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -20px color-mix(in oklab, var(--primary) 35%, transparent); }
+  .hover-lift {
+    transition:
+      transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.5s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px -20px color-mix(in oklab, var(--primary) 35%, transparent);
+  }
 
   @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
-  .animate-marquee { animation: marquee 38s linear infinite; }
+  .animate-marquee {
+    animation: marquee 38s linear infinite;
+  }
 
   @keyframes spark {
-    0%, 100% { opacity: 0.55; transform: scale(1); }
-    45% { opacity: 0.82; transform: scale(1.04); }
-    50% { opacity: 0.9; transform: scale(1.06); }
-    55% { opacity: 0.78; transform: scale(1.03); }
+    0%,
+    100% {
+      opacity: 0.55;
+      transform: scale(1);
+    }
+    45% {
+      opacity: 0.82;
+      transform: scale(1.04);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.06);
+    }
+    55% {
+      opacity: 0.78;
+      transform: scale(1.03);
+    }
   }
   .animate-spark {
     animation: spark 4.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     will-change: opacity, transform;
   }
   @media (prefers-reduced-motion: reduce) {
-    .animate-spark { animation: none; opacity: 0.7; }
+    .animate-spark {
+      animation: none;
+      opacity: 0.7;
+    }
   }
 
   @keyframes slow-zoom {
-    from { transform: scale(1); }
-    to { transform: scale(1.08); }
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.08);
+    }
   }
-  .animate-slow-zoom { animation: slow-zoom 18s ease-out forwards; }
+  .animate-slow-zoom {
+    animation: slow-zoom 18s ease-out forwards;
+  }
 }
 
 @layer utilities {
   .logo-shine {
     filter: drop-shadow(0 0 12px color-mix(in oklab, var(--brand-accent) 35%, transparent))
-            drop-shadow(0 4px 12px rgba(0,0,0,0.6));
-    transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s ease;
+      drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+    transition:
+      filter 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.6s ease;
   }
   .logo-shine:hover {
     filter: drop-shadow(0 0 22px color-mix(in oklab, var(--brand-accent) 65%, transparent))
-            drop-shadow(0 6px 16px rgba(0,0,0,0.7));
+      drop-shadow(0 6px 16px rgba(0, 0, 0, 0.7));
     transform: scale(1.02);
   }
 
   @keyframes electric-pulse {
-    0%, 100% { opacity: 0.35; transform: scale(0.92); }
-    50% { opacity: 0.7; transform: scale(1.08); }
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: scale(0.92);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.08);
+    }
   }
-  .animate-electric-pulse { animation: electric-pulse 3.2s ease-in-out infinite; }
+  .animate-electric-pulse {
+    animation: electric-pulse 3.2s ease-in-out infinite;
+  }
 
   .bg-graphite {
     background:
-      radial-gradient(1200px 600px at 20% -10%, color-mix(in oklab, var(--brand-accent) 8%, transparent), transparent 60%),
+      radial-gradient(
+        1200px 600px at 20% -10%,
+        color-mix(in oklab, var(--brand-accent) 8%, transparent),
+        transparent 60%
+      ),
       radial-gradient(900px 500px at 90% 0%, oklch(0.22 0.012 50 / 0.6), transparent 60%),
       linear-gradient(180deg, oklch(0.14 0.012 50), oklch(0.1 0.01 50));
   }

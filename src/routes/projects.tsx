@@ -1,15 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { ContactCTA } from "@/components/contact-cta";
-const projects = [
-  { img: "/Hotels and Inns/img-002.png", title: "Hotels & Inns", sub: "Full hospitality electrical scope" },
-  { img: "/Hangers/Ellington Airfield Hanger/ellington_air_field_hanger_pic1.jpg", title: "Hangars", sub: "High-bay industrial systems" },
-  { img: "/Construction/img-006.png", title: "Construction", sub: "Diverse commercial projects" },
-  { img: "/Lighting/General Lighting/Lighting_13.jpg", title: "Lighting", sub: "Architectural & exterior design" },
-  { img: "/Construction/General Construction/Abvi_Lake_Charles_1.jpg", title: "General", sub: "Ground-up commercial" },
-  { img: "/Churches/Dominion Church/Dominion_Church_Houston_TX_Pic1.jpg", title: "Churches", sub: "Sanctuary lighting & AV power" },
-];
+import { projectCategories } from "@/lib/project-image-data"; // Import projectCategories
 
 export const Route = createFileRoute("/projects")({
   component: Projects,
@@ -24,9 +17,7 @@ function Projects() {
           <p className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-6">
             Portfolio
           </p>
-          <h1 className="text-5xl md:text-7xl font-display font-bold leading-[1.05]">
-            Projects
-          </h1>
+          <h1 className="text-5xl md:text-7xl font-display font-bold leading-[1.05]">Projects</h1>
           <p className="mt-8 text-lg text-muted-foreground max-w-2xl">
             A selection of commercial electrical work across the categories we know best.
           </p>
@@ -35,9 +26,10 @@ function Projects() {
 
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-          {projects.map((p, i) => (
-            <article
-              key={`${p.title}-${i}`}
+          {projectCategories.map((p) => (
+            <Link
+              key={p.slug}
+              to={`/${p.slug}`}
               className="group relative overflow-hidden bg-secondary aspect-video rounded-md"
             >
               <img
@@ -55,7 +47,7 @@ function Projects() {
                 </h3>
                 <p className="text-primary-foreground/60 text-xs mt-1">{p.sub}</p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>

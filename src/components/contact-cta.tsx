@@ -4,11 +4,14 @@ export function ContactCTA() {
   return (
     <section className="relative bg-primary py-32 overflow-hidden">
       {/* Blueprint grid */}
-      <div className="absolute inset-0 opacity-[0.06]" style={{
-        backgroundImage:
-          "linear-gradient(var(--brand-accent) 1px, transparent 1px), linear-gradient(90deg, var(--brand-accent) 1px, transparent 1px)",
-        backgroundSize: "64px 64px",
-      }} />
+      <div
+        className="absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage:
+            "linear-gradient(var(--brand-accent) 1px, transparent 1px), linear-gradient(90deg, var(--brand-accent) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+        }}
+      />
       {/* Cinematic radial glow */}
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-brand-accent/20 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-40 left-1/4 w-[500px] h-[500px] rounded-full bg-brand-accent/10 blur-3xl pointer-events-none" />

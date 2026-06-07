@@ -11,8 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as LightingRouteImport } from './routes/lighting'
+import { Route as HotelsAndInnsRouteImport } from './routes/hotels-and-inns'
 import { Route as HomeRouteImport } from './routes/home'
+import { Route as HangarsRouteImport } from './routes/hangars'
+import { Route as GeneralRouteImport } from './routes/general'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ConstructionRouteImport } from './routes/construction'
+import { Route as ChurchesRouteImport } from './routes/churches'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -26,14 +32,44 @@ const ProjectsRoute = ProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LightingRoute = LightingRouteImport.update({
+  id: '/lighting',
+  path: '/lighting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HotelsAndInnsRoute = HotelsAndInnsRouteImport.update({
+  id: '/hotels-and-inns',
+  path: '/hotels-and-inns',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HomeRoute = HomeRouteImport.update({
   id: '/home',
   path: '/home',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HangarsRoute = HangarsRouteImport.update({
+  id: '/hangars',
+  path: '/hangars',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GeneralRoute = GeneralRouteImport.update({
+  id: '/general',
+  path: '/general',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConstructionRoute = ConstructionRouteImport.update({
+  id: '/construction',
+  path: '/construction',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChurchesRoute = ChurchesRouteImport.update({
+  id: '/churches',
+  path: '/churches',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -50,16 +86,28 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/churches': typeof ChurchesRoute
+  '/construction': typeof ConstructionRoute
   '/contact': typeof ContactRoute
+  '/general': typeof GeneralRoute
+  '/hangars': typeof HangarsRoute
   '/home': typeof HomeRoute
+  '/hotels-and-inns': typeof HotelsAndInnsRoute
+  '/lighting': typeof LightingRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/churches': typeof ChurchesRoute
+  '/construction': typeof ConstructionRoute
   '/contact': typeof ContactRoute
+  '/general': typeof GeneralRoute
+  '/hangars': typeof HangarsRoute
   '/home': typeof HomeRoute
+  '/hotels-and-inns': typeof HotelsAndInnsRoute
+  '/lighting': typeof LightingRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
 }
@@ -67,22 +115,58 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/churches': typeof ChurchesRoute
+  '/construction': typeof ConstructionRoute
   '/contact': typeof ContactRoute
+  '/general': typeof GeneralRoute
+  '/hangars': typeof HangarsRoute
   '/home': typeof HomeRoute
+  '/hotels-and-inns': typeof HotelsAndInnsRoute
+  '/lighting': typeof LightingRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/home' | '/projects' | '/services'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/churches'
+    | '/construction'
+    | '/contact'
+    | '/general'
+    | '/hangars'
+    | '/home'
+    | '/hotels-and-inns'
+    | '/lighting'
+    | '/projects'
+    | '/services'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/home' | '/projects' | '/services'
+  to:
+    | '/'
+    | '/about'
+    | '/churches'
+    | '/construction'
+    | '/contact'
+    | '/general'
+    | '/hangars'
+    | '/home'
+    | '/hotels-and-inns'
+    | '/lighting'
+    | '/projects'
+    | '/services'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/churches'
+    | '/construction'
     | '/contact'
+    | '/general'
+    | '/hangars'
     | '/home'
+    | '/hotels-and-inns'
+    | '/lighting'
     | '/projects'
     | '/services'
   fileRoutesById: FileRoutesById
@@ -90,8 +174,14 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ChurchesRoute: typeof ChurchesRoute
+  ConstructionRoute: typeof ConstructionRoute
   ContactRoute: typeof ContactRoute
+  GeneralRoute: typeof GeneralRoute
+  HangarsRoute: typeof HangarsRoute
   HomeRoute: typeof HomeRoute
+  HotelsAndInnsRoute: typeof HotelsAndInnsRoute
+  LightingRoute: typeof LightingRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
 }
@@ -112,6 +202,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lighting': {
+      id: '/lighting'
+      path: '/lighting'
+      fullPath: '/lighting'
+      preLoaderRoute: typeof LightingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hotels-and-inns': {
+      id: '/hotels-and-inns'
+      path: '/hotels-and-inns'
+      fullPath: '/hotels-and-inns'
+      preLoaderRoute: typeof HotelsAndInnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/home': {
       id: '/home'
       path: '/home'
@@ -119,11 +223,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HomeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/hangars': {
+      id: '/hangars'
+      path: '/hangars'
+      fullPath: '/hangars'
+      preLoaderRoute: typeof HangarsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/general': {
+      id: '/general'
+      path: '/general'
+      fullPath: '/general'
+      preLoaderRoute: typeof GeneralRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/construction': {
+      id: '/construction'
+      path: '/construction'
+      fullPath: '/construction'
+      preLoaderRoute: typeof ConstructionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/churches': {
+      id: '/churches'
+      path: '/churches'
+      fullPath: '/churches'
+      preLoaderRoute: typeof ChurchesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -146,8 +278,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ChurchesRoute: ChurchesRoute,
+  ConstructionRoute: ConstructionRoute,
   ContactRoute: ContactRoute,
+  GeneralRoute: GeneralRoute,
+  HangarsRoute: HangarsRoute,
   HomeRoute: HomeRoute,
+  HotelsAndInnsRoute: HotelsAndInnsRoute,
+  LightingRoute: LightingRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
 }

@@ -86,8 +86,8 @@ export function SiteFooter() {
 
         <div className="pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-primary-foreground/50">
           <p>
-            © {new Date().getFullYear()} Progressive Electrical Contractors, Inc. — TECL #25896.
-            All rights reserved.
+            © {new Date().getFullYear()} Progressive Electrical Contractors, Inc. — TECL #25896. All
+            rights reserved.
           </p>
           <p className="uppercase tracking-[0.25em]">Total · Quality · Commitment</p>
         </div>

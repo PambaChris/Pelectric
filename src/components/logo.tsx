@@ -52,8 +52,16 @@ export function Logo({
       )}
       {withSparks && (
         <>
-          <span aria-hidden className="absolute top-1/2 left-[8%] w-0.5 h-0.5 rounded-full bg-brand-accent/80 animate-spark pointer-events-none" style={{ animationDelay: "1.6s", animationDuration: "5s" }} />
-          <span aria-hidden className="absolute bottom-2 left-[14%] w-[3px] h-[3px] rounded-full bg-brand-accent/70 animate-spark pointer-events-none" style={{ animationDelay: "2.8s", animationDuration: "4.8s" }} />
+          <span
+            aria-hidden
+            className="absolute top-1/2 left-[8%] w-0.5 h-0.5 rounded-full bg-brand-accent/80 animate-spark pointer-events-none"
+            style={{ animationDelay: "1.6s", animationDuration: "5s" }}
+          />
+          <span
+            aria-hidden
+            className="absolute bottom-2 left-[14%] w-[3px] h-[3px] rounded-full bg-brand-accent/70 animate-spark pointer-events-none"
+            style={{ animationDelay: "2.8s", animationDuration: "4.8s" }}
+          />
         </>
       )}
     </span>
