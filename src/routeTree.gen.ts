@@ -9,19 +9,33 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WestTabernacleChurchRouteImport } from './routes/west-tabernacle-church'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as NewLightChurchHangerHoustonRouteImport } from './routes/new-light-church-hanger-houston'
 import { Route as LightingRouteImport } from './routes/lighting'
+import { Route as HotelsOthersRouteImport } from './routes/hotels-others'
 import { Route as HotelsAndInnsRouteImport } from './routes/hotels-and-inns'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as HangarsRouteImport } from './routes/hangars'
+import { Route as GeneralLightingRouteImport } from './routes/general-lighting'
+import { Route as GeneralConstructionRouteImport } from './routes/general-construction'
 import { Route as GeneralRouteImport } from './routes/general'
+import { Route as EmbassyWoodlandsRouteImport } from './routes/embassy-woodlands'
+import { Route as EmbassyCollegeStationRouteImport } from './routes/embassy-college-station'
+import { Route as EllingtonAirfieldHangerRouteImport } from './routes/ellington-airfield-hanger'
+import { Route as DominionChurchRouteImport } from './routes/dominion-church'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConstructionRouteImport } from './routes/construction'
 import { Route as ChurchesRouteImport } from './routes/churches'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WestTabernacleChurchRoute = WestTabernacleChurchRouteImport.update({
+  id: '/west-tabernacle-church',
+  path: '/west-tabernacle-church',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -32,9 +46,20 @@ const ProjectsRoute = ProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewLightChurchHangerHoustonRoute =
+  NewLightChurchHangerHoustonRouteImport.update({
+    id: '/new-light-church-hanger-houston',
+    path: '/new-light-church-hanger-houston',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const LightingRoute = LightingRouteImport.update({
   id: '/lighting',
   path: '/lighting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HotelsOthersRoute = HotelsOthersRouteImport.update({
+  id: '/hotels-others',
+  path: '/hotels-others',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HotelsAndInnsRoute = HotelsAndInnsRouteImport.update({
@@ -52,9 +77,39 @@ const HangarsRoute = HangarsRouteImport.update({
   path: '/hangars',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GeneralLightingRoute = GeneralLightingRouteImport.update({
+  id: '/general-lighting',
+  path: '/general-lighting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GeneralConstructionRoute = GeneralConstructionRouteImport.update({
+  id: '/general-construction',
+  path: '/general-construction',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GeneralRoute = GeneralRouteImport.update({
   id: '/general',
   path: '/general',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmbassyWoodlandsRoute = EmbassyWoodlandsRouteImport.update({
+  id: '/embassy-woodlands',
+  path: '/embassy-woodlands',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmbassyCollegeStationRoute = EmbassyCollegeStationRouteImport.update({
+  id: '/embassy-college-station',
+  path: '/embassy-college-station',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EllingtonAirfieldHangerRoute = EllingtonAirfieldHangerRouteImport.update({
+  id: '/ellington-airfield-hanger',
+  path: '/ellington-airfield-hanger',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DominionChurchRoute = DominionChurchRouteImport.update({
+  id: '/dominion-church',
+  path: '/dominion-church',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -89,13 +144,22 @@ export interface FileRoutesByFullPath {
   '/churches': typeof ChurchesRoute
   '/construction': typeof ConstructionRoute
   '/contact': typeof ContactRoute
+  '/dominion-church': typeof DominionChurchRoute
+  '/ellington-airfield-hanger': typeof EllingtonAirfieldHangerRoute
+  '/embassy-college-station': typeof EmbassyCollegeStationRoute
+  '/embassy-woodlands': typeof EmbassyWoodlandsRoute
   '/general': typeof GeneralRoute
+  '/general-construction': typeof GeneralConstructionRoute
+  '/general-lighting': typeof GeneralLightingRoute
   '/hangars': typeof HangarsRoute
   '/home': typeof HomeRoute
   '/hotels-and-inns': typeof HotelsAndInnsRoute
+  '/hotels-others': typeof HotelsOthersRoute
   '/lighting': typeof LightingRoute
+  '/new-light-church-hanger-houston': typeof NewLightChurchHangerHoustonRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/west-tabernacle-church': typeof WestTabernacleChurchRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -103,13 +167,22 @@ export interface FileRoutesByTo {
   '/churches': typeof ChurchesRoute
   '/construction': typeof ConstructionRoute
   '/contact': typeof ContactRoute
+  '/dominion-church': typeof DominionChurchRoute
+  '/ellington-airfield-hanger': typeof EllingtonAirfieldHangerRoute
+  '/embassy-college-station': typeof EmbassyCollegeStationRoute
+  '/embassy-woodlands': typeof EmbassyWoodlandsRoute
   '/general': typeof GeneralRoute
+  '/general-construction': typeof GeneralConstructionRoute
+  '/general-lighting': typeof GeneralLightingRoute
   '/hangars': typeof HangarsRoute
   '/home': typeof HomeRoute
   '/hotels-and-inns': typeof HotelsAndInnsRoute
+  '/hotels-others': typeof HotelsOthersRoute
   '/lighting': typeof LightingRoute
+  '/new-light-church-hanger-houston': typeof NewLightChurchHangerHoustonRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/west-tabernacle-church': typeof WestTabernacleChurchRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -118,13 +191,22 @@ export interface FileRoutesById {
   '/churches': typeof ChurchesRoute
   '/construction': typeof ConstructionRoute
   '/contact': typeof ContactRoute
+  '/dominion-church': typeof DominionChurchRoute
+  '/ellington-airfield-hanger': typeof EllingtonAirfieldHangerRoute
+  '/embassy-college-station': typeof EmbassyCollegeStationRoute
+  '/embassy-woodlands': typeof EmbassyWoodlandsRoute
   '/general': typeof GeneralRoute
+  '/general-construction': typeof GeneralConstructionRoute
+  '/general-lighting': typeof GeneralLightingRoute
   '/hangars': typeof HangarsRoute
   '/home': typeof HomeRoute
   '/hotels-and-inns': typeof HotelsAndInnsRoute
+  '/hotels-others': typeof HotelsOthersRoute
   '/lighting': typeof LightingRoute
+  '/new-light-church-hanger-houston': typeof NewLightChurchHangerHoustonRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/west-tabernacle-church': typeof WestTabernacleChurchRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -134,13 +216,22 @@ export interface FileRouteTypes {
     | '/churches'
     | '/construction'
     | '/contact'
+    | '/dominion-church'
+    | '/ellington-airfield-hanger'
+    | '/embassy-college-station'
+    | '/embassy-woodlands'
     | '/general'
+    | '/general-construction'
+    | '/general-lighting'
     | '/hangars'
     | '/home'
     | '/hotels-and-inns'
+    | '/hotels-others'
     | '/lighting'
+    | '/new-light-church-hanger-houston'
     | '/projects'
     | '/services'
+    | '/west-tabernacle-church'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -148,13 +239,22 @@ export interface FileRouteTypes {
     | '/churches'
     | '/construction'
     | '/contact'
+    | '/dominion-church'
+    | '/ellington-airfield-hanger'
+    | '/embassy-college-station'
+    | '/embassy-woodlands'
     | '/general'
+    | '/general-construction'
+    | '/general-lighting'
     | '/hangars'
     | '/home'
     | '/hotels-and-inns'
+    | '/hotels-others'
     | '/lighting'
+    | '/new-light-church-hanger-houston'
     | '/projects'
     | '/services'
+    | '/west-tabernacle-church'
   id:
     | '__root__'
     | '/'
@@ -162,13 +262,22 @@ export interface FileRouteTypes {
     | '/churches'
     | '/construction'
     | '/contact'
+    | '/dominion-church'
+    | '/ellington-airfield-hanger'
+    | '/embassy-college-station'
+    | '/embassy-woodlands'
     | '/general'
+    | '/general-construction'
+    | '/general-lighting'
     | '/hangars'
     | '/home'
     | '/hotels-and-inns'
+    | '/hotels-others'
     | '/lighting'
+    | '/new-light-church-hanger-houston'
     | '/projects'
     | '/services'
+    | '/west-tabernacle-church'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -177,17 +286,33 @@ export interface RootRouteChildren {
   ChurchesRoute: typeof ChurchesRoute
   ConstructionRoute: typeof ConstructionRoute
   ContactRoute: typeof ContactRoute
+  DominionChurchRoute: typeof DominionChurchRoute
+  EllingtonAirfieldHangerRoute: typeof EllingtonAirfieldHangerRoute
+  EmbassyCollegeStationRoute: typeof EmbassyCollegeStationRoute
+  EmbassyWoodlandsRoute: typeof EmbassyWoodlandsRoute
   GeneralRoute: typeof GeneralRoute
+  GeneralConstructionRoute: typeof GeneralConstructionRoute
+  GeneralLightingRoute: typeof GeneralLightingRoute
   HangarsRoute: typeof HangarsRoute
   HomeRoute: typeof HomeRoute
   HotelsAndInnsRoute: typeof HotelsAndInnsRoute
+  HotelsOthersRoute: typeof HotelsOthersRoute
   LightingRoute: typeof LightingRoute
+  NewLightChurchHangerHoustonRoute: typeof NewLightChurchHangerHoustonRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
+  WestTabernacleChurchRoute: typeof WestTabernacleChurchRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/west-tabernacle-church': {
+      id: '/west-tabernacle-church'
+      path: '/west-tabernacle-church'
+      fullPath: '/west-tabernacle-church'
+      preLoaderRoute: typeof WestTabernacleChurchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -202,11 +327,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/new-light-church-hanger-houston': {
+      id: '/new-light-church-hanger-houston'
+      path: '/new-light-church-hanger-houston'
+      fullPath: '/new-light-church-hanger-houston'
+      preLoaderRoute: typeof NewLightChurchHangerHoustonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lighting': {
       id: '/lighting'
       path: '/lighting'
       fullPath: '/lighting'
       preLoaderRoute: typeof LightingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hotels-others': {
+      id: '/hotels-others'
+      path: '/hotels-others'
+      fullPath: '/hotels-others'
+      preLoaderRoute: typeof HotelsOthersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hotels-and-inns': {
@@ -230,11 +369,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HangarsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/general-lighting': {
+      id: '/general-lighting'
+      path: '/general-lighting'
+      fullPath: '/general-lighting'
+      preLoaderRoute: typeof GeneralLightingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/general-construction': {
+      id: '/general-construction'
+      path: '/general-construction'
+      fullPath: '/general-construction'
+      preLoaderRoute: typeof GeneralConstructionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/general': {
       id: '/general'
       path: '/general'
       fullPath: '/general'
       preLoaderRoute: typeof GeneralRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/embassy-woodlands': {
+      id: '/embassy-woodlands'
+      path: '/embassy-woodlands'
+      fullPath: '/embassy-woodlands'
+      preLoaderRoute: typeof EmbassyWoodlandsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/embassy-college-station': {
+      id: '/embassy-college-station'
+      path: '/embassy-college-station'
+      fullPath: '/embassy-college-station'
+      preLoaderRoute: typeof EmbassyCollegeStationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ellington-airfield-hanger': {
+      id: '/ellington-airfield-hanger'
+      path: '/ellington-airfield-hanger'
+      fullPath: '/ellington-airfield-hanger'
+      preLoaderRoute: typeof EllingtonAirfieldHangerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dominion-church': {
+      id: '/dominion-church'
+      path: '/dominion-church'
+      fullPath: '/dominion-church'
+      preLoaderRoute: typeof DominionChurchRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -281,13 +462,22 @@ const rootRouteChildren: RootRouteChildren = {
   ChurchesRoute: ChurchesRoute,
   ConstructionRoute: ConstructionRoute,
   ContactRoute: ContactRoute,
+  DominionChurchRoute: DominionChurchRoute,
+  EllingtonAirfieldHangerRoute: EllingtonAirfieldHangerRoute,
+  EmbassyCollegeStationRoute: EmbassyCollegeStationRoute,
+  EmbassyWoodlandsRoute: EmbassyWoodlandsRoute,
   GeneralRoute: GeneralRoute,
+  GeneralConstructionRoute: GeneralConstructionRoute,
+  GeneralLightingRoute: GeneralLightingRoute,
   HangarsRoute: HangarsRoute,
   HomeRoute: HomeRoute,
   HotelsAndInnsRoute: HotelsAndInnsRoute,
+  HotelsOthersRoute: HotelsOthersRoute,
   LightingRoute: LightingRoute,
+  NewLightChurchHangerHoustonRoute: NewLightChurchHangerHoustonRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
+  WestTabernacleChurchRoute: WestTabernacleChurchRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
