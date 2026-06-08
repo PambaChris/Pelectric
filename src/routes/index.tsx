@@ -220,7 +220,8 @@ function Index() {
               <Link
                 key={c.title}
                 to="/projects"
-                className="group relative overflow-hidden bg-secondary aspect-video block hover-lift rounded-sm"
+                className="group relative overflow-hidden bg-secondary aspect-video block hover-lift"
+                style={{ borderRadius: "121px" }}
               >
                 <img
                   src={c.img}
@@ -228,7 +229,13 @@ function Index() {
                   loading="lazy"
                   width={1549}
                   height={871}
-                  className="w-full h-full object-cover transition-all duration-[1400ms] ease-out group-hover:scale-110 group-hover:brightness-110"
+                  style={{
+                    borderRadius: "121px",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                  className="transition-all duration-[1400ms] ease-out group-hover:scale-110 group-hover:brightness-110"
                 />
                 {/* Lighter, cinematic gradient — image stays visible */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-85" />
